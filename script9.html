@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>9</title></head>
+<body>
+    <h2>9)Folha de Pagamento</h2>
+    <input type="number" id="hora" placeholder="Valor da hora" step="0.01">
+    <input type="number" id="qtd" placeholder="Horas trabalhadas">
+    <button onclick="calcular()">Calcular</button>
+    <pre id="resultado"></pre>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function calcular() {
+            var vh = Number(document.getElementById("hora").value);
+            var qh = Number(document.getElementById("qtd").value);
+            var bruto = vh * qh;
+            var ir, pIr;
+            if (bruto <= 2112) { ir = 0; pIr = 0; }
+            else if (bruto <= 2826.65) { pIr = 7.5; ir = bruto * 0.075; }
+            else if (bruto <= 3751.05) { pIr = 15; ir = bruto * 0.15; }
+            else if (bruto <= 4664.68) { pIr = 22.5; ir = bruto * 0.225; }
+            else { pIr = 27.5; ir = bruto * 0.275; }
+            var inss = bruto * 0.10;
+            var sind = bruto * 0.03;
+            var total = ir + inss + sind;
+            var liquido = bruto - total;
+            var txt = "Salário Bruto: (" + vh + "*" + qh + ") R$ " + bruto.toFixed(2) + "\n" +
+                      "IR: (" + pIr + "%) R$ " + ir.toFixed(2) + "\n" +
+                      "INSS: (10%) R$ " + inss.toFixed(2) + "\n" +
+                      "SINDICATO: (3%) R$ " + sind.toFixed(2) + "\n" +
+                      "TOTAL DE DESCONTOS: R$ " + total.toFixed(2) + "\n" +
+                      "SALÁRIO LÍQUIDO: R$ " + liquido.toFixed(2);
+            document.getElementById("resultado").innerText = txt;
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

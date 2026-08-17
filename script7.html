@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>7</title></head>
+<body>
+    <h2>7) Horario de estudos</h2>
+    <input type="text" id="turno" maxlength="1" placeholder="M, V ou N">
+    <button onclick="verificar()">Verificar</button><br><br><a href="Home.html">Voltar</a>
+
+    <script>
+        function verificar() {
+            var t = document.getElementById("turno").value.toUpperCase();
+            if (t == "M") alert("Bom Dia!");
+            else if (t == "V") alert("Boa Tarde!");
+            else if (t == "N") alert("Boa Noite!");
+            else alert("Valor Inválido!");
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+    
+</body>
+</html>

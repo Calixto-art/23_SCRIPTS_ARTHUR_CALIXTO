@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>21 - Investigação do Crime</title></head>
+<body>
+    <h2>21 - Investigação do Crime</h2>
+
+    <p>Responda com "sim" ou "não":</p>
+    Telefonou para a vítima? <input type="text" id="p1"><br><br>
+    Esteve no local do crime? <input type="text" id="p2"><br><br>
+    Mora perto da vítima? <input type="text" id="p3"><br><br>
+    Devia para a vítima? <input type="text" id="p4"><br><br>
+    Já trabalhou com a vítima? <input type="text" id="p5"><br><br>
+
+    <button onclick="classificar()">Classificar</button>
+<br><br>
+     <a href="Home.html">Voltar</a>
+
+    <script>
+        function classificar() {
+            var sim = 0;
+            for (var i = 1; i <= 5; i++) {
+                var r = document.getElementById("p" + i).value.toLowerCase();
+                if (r == "sim") sim++;
+            }
+            var resultado;
+            if (sim == 2) resultado = "Suspeita";
+            else if (sim == 3 || sim == 4) resultado = "Cúmplice";
+            else if (sim == 5) resultado = "Assassino";
+            else resultado = "Inocente";
+            alert("Respostas positivas: " + sim + "\nClassificação: " + resultado);
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+        p{
+             background-color: #5389af;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

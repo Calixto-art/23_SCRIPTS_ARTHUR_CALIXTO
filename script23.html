@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>23 - Frutaria</title></head>
+<body>
+    <h2>23 - Frutaria</h2>
+    <input type="number" id="m" placeholder="Kg de morango" step="any">
+    <input type="number" id="ma" placeholder="Kg de maçã" step="any">
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function calcular() {
+            var m = Number(document.getElementById("m").value);
+            var ma = Number(document.getElementById("ma").value);
+
+            var pm = (m <= 5) ? 24.00 : 20.00;
+            var pma = (ma <= 5) ? 14.80 : 12.40;
+
+            var total = (m * pm) + (ma * pma);
+            var totalKg = m + ma;
+
+            if (totalKg > 12 || total > 180) {
+                total = total - (total * 0.10);
+                alert("Total com desconto de 10%: R$ " + total.toFixed(2));
+            } else {
+                alert("Total a pagar: R$ " + total.toFixed(2));
+            }
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

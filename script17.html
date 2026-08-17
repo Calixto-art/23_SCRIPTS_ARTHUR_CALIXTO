@@ -1,0 +1,72 @@
+
+100%
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>17 - Centenas, Dezenas e Unidades</title></head>
+<body>
+    <h2>17 - Centenas, Dezenas e Unidades</h2>
+    <input type="number" id="n" placeholder="Número menor que 1000">
+    <button onclick="ver()">Decompor</button>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n < 0 || n >= 1000) { alert("Digite um número entre 0 e 999"); return; }
+            var c = Math.floor(n / 100);
+            var d = Math.floor((n % 100) / 10);
+            var u = n % 10;
+            var partes = [];
+            if (c > 0) partes.push(c + (c == 1 ? " centena" : " centenas"));
+            if (d > 0) partes.push(d + (d == 1 ? " dezena" : " dezenas"));
+            if (u > 0) partes.push(u + (u == 1 ? " unidade" : " unidades"));
+            var texto = "";
+            if (partes.length == 0) texto = "zero";
+            else if (partes.length == 1) texto = partes[0];
+            else if (partes.length == 2) texto = partes[0] + " e " + partes[1];
+            else texto = partes[0] + ", " + partes[1] + " e " + partes[2];
+            alert(n + " = " + texto);
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

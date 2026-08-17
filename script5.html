@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>5</title></head>
+<body>
+    <h2>5) Qual o maior ou menor?</h2>
+    <input type="number" id="a" placeholder="Número 1">
+    <input type="number" id="b" placeholder="Número 2">
+    <input type="number" id="c" placeholder="Número 3">
+    <button onclick="ver()">Ver</button><br><br><br>
+     <a href="Home.html">Voltar</a>
+
+    <script>
+        function ver() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            var maior = a, menor = a;
+            if (b > maior) maior = b;
+            if (c > maior) maior = c;
+            if (b < menor) menor = b;
+            if (c < menor) menor = c;
+            alert("Maior: " + maior + "\nMenor: " + menor);
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

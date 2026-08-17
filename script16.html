@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>16 - Par ou Ímpar</title></head>
+<body>
+    <h2>16 - Par ou Ímpar</h2>
+    <input type="number" id="n" placeholder="Digite um inteiro">
+    <button onclick="ver()">Verificar</button>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n % 2 == 0) alert(n + " é PAR");
+            else alert(n + " é ÍMPAR");
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>10</title></head>
+<body>
+    <h2>10)Dia da Semana</h2>
+   
+    <input type="number" id="n" placeholder="1 a 7">
+    <button onclick="ver()">Ver Dia</button>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n == 1) alert("Domingo");
+            else if (n == 2) alert("Segunda");
+            else if (n == 3) alert("Terça");
+            else if (n == 4) alert("Quarta");
+            else if (n == 5) alert("Quinta");
+            else if (n == 6) alert("Sexta");
+            else if (n == 7) alert("Sábado");
+            else alert("Valor inválido");
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

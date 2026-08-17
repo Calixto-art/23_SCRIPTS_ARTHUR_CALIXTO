@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>13</title></head>
+<body>
+    <h2>13)Equação do 2º Grau</h2>
+    <input type="number" id="a" placeholder="a" step="any">
+    <input type="number" id="b" placeholder="b" step="any">
+    <input type="number" id="c" placeholder="c" step="any">
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function calcular() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            if (a == 0) { alert("Não é equação do 2º grau"); return; }
+            var delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                alert("Delta negativo - sem raízes reais");
+            } else if (delta == 0) {
+                var x = -b / (2 * a);
+                alert("Raiz única: x = " + x);
+            } else {
+                var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                alert("x1 = " + x1 + "\nx2 = " + x2);
+            }
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

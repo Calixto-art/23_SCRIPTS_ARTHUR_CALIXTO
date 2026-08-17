@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>8</title></head>
+<body>
+    <h2>8) Reajuste Salarial</h2>
+    <input type="number" id="sal" placeholder="Salário atual" step="0.01">
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+     <a href="Home.html">Voltar</a>
+
+
+    <script>
+        function calcular() {
+            var s = Number(document.getElementById("sal").value);
+            var p;
+            if (s <= 1480) p = 20;
+            else if (s <= 1900) p = 15;
+            else if (s <= 2500) p = 10;
+            else p = 5;
+            var aumento = s * p / 100;
+            var novo = s + aumento;
+            alert("Salário antes: R$ " + s.toFixed(2) +
+                  "\nPercentual: " + p + "%" +
+                  "\nValor do aumento: R$ " + aumento.toFixed(2) +
+                  "\nNovo salário: R$ " + novo.toFixed(2));
+        }
+    </script>
+     <style>
+        :root{
+            --azul-senai:#004a80;
+            --laranja: #ff5e00;
+            --fundo: #f0f4f8;
+            --branco: #FFFFFF;
+            --texto: #2c3e50;
+            --brancodoinput: #d0d4d4; 
+        }
+         button{
+            background-color: #004a80;
+            color: white;
+            border: black;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        input{
+              background-color: #d0d4d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        h2{
+              background-color: #004d80;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+        }
+        a{
+            background-color: var(--azul-senai);
+            color: white;
+            border: none;
+            padding: 12px 200px;
+            cursor: pointer;
+        }
+    </style>
+    
+</body>
+</html>
